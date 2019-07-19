@@ -1,0 +1,9 @@
+  RRRRRRRRRRR        OOOOOOOO             OOOOOOOO         KK            II     EEEEEEEE\r
+RRRRRRRRRRRRR      OOOOOOOOOOOO         OOOOOOOOOOOO       KK                   EEE\r
+RRRRRRR RRR       OOOO      OOOO       OOOO      OOOO      KK           IIII    EEE\r
+RRRRRRR RRR      OOOO   OO   OOOO     OOOO   OO   OOOO     KK   KKK     IIII    EEE\r
+ RRRRRR RRR     OOOOO  OOOO  OOOOO   OOOOO  OOOO  OOOOO    KK  KK       IIII    EEEEEEEE\r
+    RRR RRR      OOOO  OOOO  OOOO     OOOO  OOOO  OOOO     KKKKK        IIII    EEE\r
+    RRR RRR       OOOOO    OOOOO       OOOOO    OOOOO      KKKKK        IIII    EEE\r
+    RRR RRR        OOOOOOOOOOOO         OOOOOOOOOOOO       KK  KK       IIII    EEE\r
+    RRR RRR          OOOOOOOO             OOOOOOOO         KK   KKK     IIII    EEEEEEEE\r

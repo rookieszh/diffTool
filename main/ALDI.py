@@ -1,5 +1,6 @@
 from OboardCamDisp import Ui_MainWindow
 from InfoWindow import Ui_MainWindow_2
+from HelpWindow import Ui_MainWindow_3
 from sys import argv, exit
 from PyQt5.QtWidgets import QApplication, QMainWindow, QFileDialog
 from PyQt5.QtCore import QTimer, QEvent
@@ -55,6 +56,7 @@ class DiffCount(QMainWindow, Ui_MainWindow):
         # self.OriginPathLE.textChanged.connect(self.originPathChange)
         # self.NewPathLE.textChanged.connect(self.newPathChange)
         # self.IniBtn.clicked.connect(self.addToPath)
+        self.HelpMB.changed.connect(self.openHelpInfo)
 
     def goComparison(self):
         self.Timer.start(1)
@@ -172,8 +174,12 @@ class DiffCount(QMainWindow, Ui_MainWindow):
     def setOneModel(self):
         if self.OneMB.isChecked() and self.DiffMB.isChecked():
             self.DiffMB.setChecked(False)
+            self.rightTE.setEnabled(False)
+            self.rightTE.setStyleSheet("background:#808080")
         elif not self.OneMB.isChecked() and not self.DiffMB.isChecked():
             self.OneMB.setChecked(True)
+            self.rightTE.setEnabled(False)
+            self.rightTE.setStyleSheet("background:#808080")
         # self.ChoiceSld.setValue(0)
         # self.NewPathLE.setEnabled(False)
         # self.NewPathBtn.setEnabled(False)
@@ -181,8 +187,12 @@ class DiffCount(QMainWindow, Ui_MainWindow):
     def setComparisonModel(self):
         if self.DiffMB.isChecked() and self.OneMB.isChecked():
             self.OneMB.setChecked(False)
+            self.rightTE.setEnabled(True)
+            self.rightTE.setStyleSheet("background:#000000")
         elif not self.DiffMB.isChecked() and not self.OneMB.isChecked():
             self.DiffMB.setChecked(True)
+            self.rightTE.setEnabled(True)
+            self.rightTE.setStyleSheet("background:#000000")
         # self.ChoiceSld.setValue(1)
         # self.NewPathLE.setEnabled(True)
         # self.NewPathBtn.setEnabled(True)
@@ -281,6 +291,11 @@ class DiffCount(QMainWindow, Ui_MainWindow):
             self.rightTE.setPlainText(self.rightTE.toPlainText().replace('file:///', ''))
             self.NewPath = self.rightTE.toPlainText()
 
+    def openHelpInfo(self):
+        if self.HelpMB.isChecked():
+            self.HelpMB.setChecked(False)
+            self.newHelpWindow()
+
     # def newPathChange(self):
     #     if 0 == self.NewPathLE.text().find('file:///'):
     #         self.NewPathLE.setText(self.NewPathLE.text().replace('file:///', ''))
@@ -295,10 +310,19 @@ class DiffCount(QMainWindow, Ui_MainWindow):
         self.ui.traninfo(info = information)
         self.ui.show()
 
+    def newHelpWindow(self):
+        self.helpUi = HelpInfo()
+        self.helpUi.show()
+
 
 class ChildInfo(QMainWindow, Ui_MainWindow_2):
     def __init__(self, parent=None):
         super(ChildInfo, self).__init__(parent)
+        self.setupUi(self)
+
+class HelpInfo(QMainWindow, Ui_MainWindow_3):
+    def __init__(self, parent=None):
+        super(HelpInfo, self).__init__(parent)
         self.setupUi(self)
 
 
