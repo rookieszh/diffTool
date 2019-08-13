@@ -136,7 +136,7 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menuSettings_2.menuAction())
         self.menuBar.addAction(self.menuSettings_3.menuAction())
         self.setStyleSheet("QTextEdit{background:#000000;color:#DDDDDD}"
-                           "QPushButton{background:#00FF00}")
+                           "QPushButton{background:#E5EAF5}")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("myicon.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.setWindowIcon(icon)
