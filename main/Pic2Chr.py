@@ -1,11 +1,11 @@
 from PIL import Image # PIL 是一个 Python 图像处理库
 
-# ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
-ascii_char = list("E ")
+ascii_char = list("$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. ")
+# ascii_char = list("E ")
 # 是我们的字符画所使用的字符集，一共有 70 个字符，字符的种类与数量可以自己根据字符画的效果反复调试的
 
-WIDTH = 20 # 字符画的宽
-HEIGHT = 12 # 字符画的高
+WIDTH = 400 # 字符画的宽
+HEIGHT = 180 # 字符画的高
 
 
 # 将256灰度映射到70个字符上，也就是RGB值转字符的函数：
@@ -20,7 +20,7 @@ def get_char(r, g, b, alpha=256):  # alpha透明度
 
 
 if __name__ == '__main__':
-   img = 'E.ico'  # 图片所在位置
+   img = 'SXF.jpg'  # 图片所在位置
    im = Image.open(img)
    im = im.resize((WIDTH, HEIGHT), Image.NEAREST)
    txt = ""
